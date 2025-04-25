@@ -1,13 +1,126 @@
 :root {
     --verde-principal: #2E8B57;
+    --verde-claro: #E8F5E9;
     --madera: #DEB887;
+    --gris: #555;
+    --blanco: #FFF;
 }
 
+/* Estilos generales */
 body {
     font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--gris);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background-color: var(--blanco);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h1 {
+    color: var(--verde-principal);
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.tagline {
+    color: var(--gris);
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+
+.nav-link {
+    color: var(--gris);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+.nav-link.active {
+    color: var(--verde-principal);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--blanco);
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
 }
 
 .btn {
-    background: var(--verde-principal);
-    padding: 12px 24px;
+    display: inline-block;
+    background-color: var(--verde-principal);
+    color: var(--blanco);
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Features */
+.features {
+    padding: 4rem 0;
+    background-color: var(--verde-claro);
+}
+
+.feature-card {
+    background: var(--blanco);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--verde-principal);
+    margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        height: 50vh;
+    }
+    
+    .hero-content h2 {
+        font-size: 2rem;
+    }
 }
