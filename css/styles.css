@@ -1,0 +1,13 @@
+:root {
+    --verde-principal: #2E8B57;
+    --madera: #DEB887;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.btn {
+    background: var(--verde-principal);
+    padding: 12px 24px;
+}
