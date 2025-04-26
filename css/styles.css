@@ -1,15 +1,17 @@
-/* Variables */
+/* ============== VARIABLES ============== */
 :root {
-    --primary: #2E8B57;
-    --secondary: #DEB887;
-    --light: #F8F9FA;
-    --dark: #343A40;
-    --white: #FFFFFF;
-    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
-    --shadow-lg: 0 10px 20px rgba(0,0,0,0.1);
+    --color-primary: #2E8B57;
+    --color-secondary: #DEB887;
+    --color-light: #F8F9FA;
+    --color-dark: #212529;
+    --color-text: #333333;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Reset y Base */
+/* ============== BASE ============== */
 * {
     margin: 0;
     padding: 0;
@@ -19,108 +21,81 @@
 body {
     font-family: 'Raleway', sans-serif;
     line-height: 1.6;
-    color: var(--dark);
-    background-color: var(--light);
+    color: var(--color-text);
+    background-color: var(--color-light);
 }
 
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 1.5rem;
 }
 
+/* ============== COMPONENTES ============== */
 /* Header */
-.header {
-    background-color: var(--white);
+.main-header {
+    background-color: white;
     box-shadow: var(--shadow-sm);
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 15px 0;
+    padding: 1rem 0;
 }
 
-.nav {
+.logo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-.nav-link {
-    color: var(--dark);
+    gap: 0.75rem;
     text-decoration: none;
+}
+
+.logo img {
+    height: 3rem;
+    width: auto;
+}
+
+.tagline {
+    font-size: 0.875rem;
+    color: var(--color-primary);
     font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s;
 }
 
-.nav-link:hover {
-    color: var(--primary);
-}
-
-.nav-link.active {
-    color: var(--primary);
-}
-
-/* Hero Section */
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+/* Hero Banner */
+.hero-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                 url('../images/hero-bg.jpg') center/cover no-repeat;
-    height: 80vh;
+    height: 90vh;
+    min-height: 600px;
     display: flex;
     align-items: center;
-    color: var(--white);
+    color: white;
     text-align: center;
-    padding: 0 20px;
+    padding: 0 1rem;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
     opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Botones */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 12px 24px;
-    border-radius: 50px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s;
-    cursor: pointer;
-    border: 2px solid transparent;
-}
-
-.btn-primary {
-    background-color: var(--primary);
-    color: var(--white);
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-lg);
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-    .hero-content h1 {
-        font-size: 2.5rem;
+/* ============== MEDIA QUERIES ============== */
+@media (max-width: 768px) {
+    .main-header {
+        padding: 0.75rem 0;
     }
     
-    .nav {
-        gap: 15px;
+    .hero-banner {
+        height: 80vh;
     }
 }
