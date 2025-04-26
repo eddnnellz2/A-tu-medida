@@ -4,38 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Tu Medida - Muebles Artesanales</title>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Marketplace de muebles artesanales venezolanos. Diseños personalizados.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="logo">
-                <h1>A Tu Medida</h1>
-                <span class="tagline">Hecho por artesanos venezolanos</span>
-            </div>
+            <a href="index.html" class="logo">
+                <img src="images/logo.svg" alt="A Tu Medida" width="180">
+            </a>
             <nav class="nav">
                 <a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Inicio</a>
-                <a href="marketplace.html" class="nav-link"><i class="fas fa-store"></i> Marketplace</a>
-                <div class="cart-icon" id="cartIcon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
+                <a href="marketplace.html" class="nav-link"><i class="fas fa-tshirt"></i> Productos</a>
+                <a href="artesanos.html" class="nav-link"><i class="fas fa-hands-helping"></i> Artesanos</a>
+                <div class="user-actions">
+                    <button id="loginBtn" class="btn btn-outline"><i class="fas fa-user"></i> Ingresar</button>
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
                 </div>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h2>Diseños únicos, hechos con alma</h2>
-                <p>Conectamos tus ideas con artesanos locales</p>
-                <a href="marketplace.html" class="btn btn-primary">Explorar Catálogo</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Diseños que cuentan historias</h1>
+            <p class="subtitle">Muebles artesanales 100% personalizables</p>
+            <div class="cta-buttons">
+                <a href="marketplace.html" class="btn btn-primary btn-lg"><i class="fas fa-store"></i> Ver Catálogo</a>
+                <a href="#como-funciona" class="btn btn-outline-white btn-lg"><i class="fas fa-question-circle"></i> ¿Cómo funciona?</a>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <script type="module" src="js/main.js"></script>
+    <!-- Scripts -->
+    <script src="js/main.js" type="module"></script>
 </body>
 </html>
