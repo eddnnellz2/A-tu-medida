@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Tu Medida - Muebles Artesanales</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -15,41 +16,26 @@
                 <span class="tagline">Hecho por artesanos venezolanos</span>
             </div>
             <nav class="nav">
-                <a href="index.html" class="nav-link active">Inicio</a>
-                <a href="marketplace.html" class="nav-link">Marketplace</a>
+                <a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Inicio</a>
+                <a href="marketplace.html" class="nav-link"><i class="fas fa-store"></i> Marketplace</a>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Diseños únicos, hechos con alma</h2>
-            <p>Conectamos tus ideas con artesanos locales. ¡Personaliza tus muebles!</p>
-            <a href="marketplace.html" class="btn">Explorar Catálogo</a>
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Diseños únicos, hechos con alma</h2>
+                <p>Conectamos tus ideas con artesanos locales</p>
+                <a href="marketplace.html" class="btn btn-primary">Explorar Catálogo</a>
+            </div>
+        </section>
+    </main>
 
-    <section class="features">
-        <div class="container">
-            <div class="feature-card">
-                <i class="fas fa-people-carry"></i>
-                <h3>Artesanos Expertos</h3>
-                <p>Trabajamos con los mejores creadores de Venezuela.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-tree"></i>
-                <h3>Materiales Naturales</h3>
-                <p>Madera, cuero y otros materiales premium.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-paint-brush"></i>
-                <h3>Personalización</h3>
-                <p>Diseña el mueble perfecto para tu espacio.</p>
-            </div>
-        </div>
-    </section>
-
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
