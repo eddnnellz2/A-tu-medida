@@ -1,14 +1,26 @@
-// Módulos
+// ============== MÓDULOS ==============
 import { initCart } from './cart.js';
-import { initAuth } from './auth.js';
+import { loadFeaturedProducts } from './api.js';
 
-// Inicialización
-document.addEventListener('DOMContentLoaded', () => {
-    // Sistema de carrito
-    initCart();
+// ============== FUNCIONES PRINCIPALES ==============
+function initMobileMenu() {
+    const menuBtn = document.createElement('button');
+    menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    menuBtn.classList.add('mobile-menu-btn');
+    menuBtn.addEventListener('click', toggleMenu);
     
-    // Autenticación
-    initAuth();
+    document.querySelector('.main-header .container').prepend(menuBtn);
+}
+
+function toggleMenu() {
+    document.body.classList.toggle('menu-open');
+}
+
+// ============== INICIALIZACIÓN ==============
+document.addEventListener('DOMContentLoaded', () => {
+    initCart();
+    loadFeaturedProducts();
+    initMobileMenu();
     
     // Efecto smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -20,6 +32,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    
-    console.log('Sitio cargado correctamente');
 });
