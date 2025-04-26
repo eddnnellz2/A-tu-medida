@@ -1,49 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Metadatos mejorados -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Tu Medida - Muebles Artesanales</title>
     <meta name="description" content="Marketplace de muebles artesanales venezolanos. Diseños personalizados.">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>A Tu Medida - Muebles con Identidad</title>
+    
+    <!-- Preload crítico -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" as="font">
+    
+    <!-- Estilos -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
+    <!-- Header Rediseñado -->
+    <header class="main-header">
         <div class="container">
-            <a href="index.html" class="logo">
-                <img src="images/logo.svg" alt="A Tu Medida" width="180">
+            <a href="/" class="logo">
+                <img src="images/logo.svg" alt="A Tu Medida" width="200">
+                <span class="tagline">Artesanía con alma venezolana</span>
             </a>
-            <nav class="nav">
-                <a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Inicio</a>
-                <a href="marketplace.html" class="nav-link"><i class="fas fa-tshirt"></i> Productos</a>
-                <a href="artesanos.html" class="nav-link"><i class="fas fa-hands-helping"></i> Artesanos</a>
-                <div class="user-actions">
-                    <button id="loginBtn" class="btn btn-outline"><i class="fas fa-user"></i> Ingresar</button>
-                    <div class="cart-icon" id="cartIcon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
-                    </div>
-                </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="productos.html"><i class="fas fa-tshirt"></i> Productos</a></li>
+                    <li><a href="artesanos.html"><i class="fas fa-hands-helping"></i> Artesanos</a></li>
+                </ul>
             </nav>
+            
+            <div class="user-actions">
+                <button class="btn-icon" id="searchBtn"><i class="fas fa-search"></i></button>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Impactante -->
+    <section class="hero-banner">
         <div class="hero-content">
-            <h1>Diseños que cuentan historias</h1>
-            <p class="subtitle">Muebles artesanales 100% personalizables</p>
-            <div class="cta-buttons">
-                <a href="marketplace.html" class="btn btn-primary btn-lg"><i class="fas fa-store"></i> Ver Catálogo</a>
-                <a href="#como-funciona" class="btn btn-outline-white btn-lg"><i class="fas fa-question-circle"></i> ¿Cómo funciona?</a>
+            <h1>Diseños que narran historias</h1>
+            <p class="subtitle">Cada pieza es una obra de arte única</p>
+            <div class="cta-container">
+                <a href="productos.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-store"></i> Explorar Colección
+                </a>
+                <a href="#video-tour" class="btn btn-outline btn-lg">
+                    <i class="fas fa-play-circle"></i> Ver Video
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Scripts -->
+    <!-- Scripts optimizados -->
     <script src="js/main.js" type="module"></script>
 </body>
 </html>
