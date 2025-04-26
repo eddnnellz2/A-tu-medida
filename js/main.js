@@ -1,28 +1,18 @@
-import { auth } from './firebase-config.js';
-import { addToCart } from './cart.js';
+import { initCart } from './cart.js';
+import { initAuth } from './auth.js';
+import { loadFeaturedProducts } from './products.js';
 
-// Login con Email
-document.getElementById('loginBtn').addEventListener('click', async () => {
-  const email = document.getElementById('loginEmail').value;
-  const password = document.getElementById('loginPassword').value;
-  
-  try {
-    await auth.signInWithEmailAndPassword(email, password);
-    alert('Bienvenido!');
-  } catch (error) {
-    alert('Error: ' + error.message);
-  }
-});
-
-// Login con Google
-document.getElementById('googleLogin').addEventListener('click', () => {
-  const provider = new firebase.auth.GoogleAuthProvider();
-  auth.signInWithPopup(provider);
-});
-
-// Escuchar cambios de autenticación
-auth.onAuthStateChanged(user => {
-  if (user) {
-    document.getElementById('authModal').style.display = 'none';
-  }
+// Inicialización
+document.addEventListener('DOMContentLoaded', () => {
+    initCart();
+    initAuth();
+    loadFeaturedProducts();
+    
+    // Menú activo
+    const currentPage = location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-link').forEach(link => {
+        if(link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
 });
