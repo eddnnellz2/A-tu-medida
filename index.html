@@ -1,64 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Metadatos mejorados -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Marketplace de muebles artesanales venezolanos. Diseños personalizados.">
-    <title>A Tu Medida - Muebles con Identidad</title>
-    
-    <!-- Preload crítico -->
-    <link rel="preload" href="css/styles.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" as="font">
-    
-    <!-- Estilos -->
-    <link rel="stylesheet" href="css/styles.css">
+    <title>A Tu Medida - Marketplace Artesanal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header Rediseñado -->
-    <header class="main-header">
-        <div class="container">
-            <a href="/" class="logo">
-                <img src="images/logo.svg" alt="A Tu Medida" width="200">
-                <span class="tagline">Artesanía con alma venezolana</span>
-            </a>
-            
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="/" class="active"><i class="fas fa-home"></i> Inicio</a></li>
-                    <li><a href="productos.html"><i class="fas fa-tshirt"></i> Productos</a></li>
-                    <li><a href="artesanos.html"><i class="fas fa-hands-helping"></i> Artesanos</a></li>
-                </ul>
-            </nav>
-            
-            <div class="user-actions">
-                <button class="btn-icon" id="searchBtn"><i class="fas fa-search"></i></button>
-                <div class="cart-icon" id="cartIcon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-badge">0</span>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1>A Tu Medida</h1>
+                <span class="tagline">Hecho por artesanos venezolanos</span>
+            </div>
+            <div class="user-controls">
+                <div id="auth-buttons">
+                    <button id="login-btn" class="btn-outline"><i class="fab fa-google"></i> Iniciar Sesión</button>
+                    <button id="logout-btn" class="btn-outline hidden"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Impactante -->
-    <section class="hero-banner">
-        <div class="hero-content">
-            <h1>Diseños que narran historias</h1>
-            <p class="subtitle">Cada pieza es una obra de arte única</p>
-            <div class="cta-container">
-                <a href="productos.html" class="btn btn-primary btn-lg">
-                    <i class="fas fa-store"></i> Explorar Colección
-                </a>
-                <a href="#video-tour" class="btn btn-outline btn-lg">
-                    <i class="fas fa-play-circle"></i> Ver Video
-                </a>
+    <!-- Marketplace -->
+    <section class="marketplace">
+        <h2 class="section-title">Explora Nuestro Marketplace</h2>
+        
+        <!-- Filtros -->
+        <div class="filters">
+            <div class="filter-group">
+                <label for="category-filter"><i class="fas fa-tags"></i> Categoría</label>
+                <select id="category-filter" class="custom-select">
+                    <option value="all">Todas</option>
+                    <option value="Mesas">Mesas</option>
+                    <option value="Sillas">Sillas</option>
+                </select>
             </div>
+        </div>
+        
+        <!-- Grid de Productos -->
+        <div id="products-grid" class="products-grid">
+            <!-- Los productos se cargarán dinámicamente desde Supabase -->
         </div>
     </section>
 
-    <!-- Scripts optimizados -->
-    <script src="js/main.js" type="module"></script>
+    <!-- Chat (Oculto inicialmente) -->
+    <div id="chat-container" class="hidden">
+        <div id="messages"></div>
+        <input id="message-input" placeholder="Escribe un mensaje...">
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
